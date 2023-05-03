@@ -24,7 +24,7 @@ services:
     tty: true
     env_file:
       - .env
-    entrypoint: redis-server /usr/local/etc/redis/redis.conf --requirepass $$REDIS_PASSWORD
+    entrypoint: redis-server /usr/local/etc/redis/redis.conf --requirepass ${REDIS_PASSWORD}
     ports:
       - "6379:6379"
     volumes:
