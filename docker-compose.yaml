@@ -36,8 +36,10 @@ services:
 volumes:
   data:
     name: yotemi_data
+    external: true
   redis_data:
     name: yotemi_redis_data
+    external: true
 
 secrets:
   postgres_password:
