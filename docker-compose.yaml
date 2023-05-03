@@ -22,7 +22,7 @@ services:
     container_name: yotemi_redis
     restart: unless-stopped
     tty: true
-    entrypoint: redis-server /usr/local/etc/redis/redis.conf
+    entrypoint: redis-server /usr/local/etc/redis/redis.conf --requirepass "$${REDIS_PASSWORD:?REDIS_PASSWORD variable is not set}"
     env_file:
       - .env
     ports:
